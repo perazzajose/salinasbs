@@ -1,0 +1,371 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Starry Background */
+.stars-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.8) 0%, rgba(255, 215, 0, 0.4) 50%, transparent 100%);
+  border-radius: 50%;
+  animation: twinkle linear infinite;
+}
+
+.star-small {
+  width: 1px;
+  height: 1px;
+  box-shadow: 0 0 2px rgba(255, 215, 0, 0.5);
+}
+
+.star-medium {
+  width: 2px;
+  height: 2px;
+  box-shadow: 0 0 4px rgba(255, 215, 0, 0.6);
+}
+
+.star-large {
+  width: 3px;
+  height: 3px;
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.7);
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Mobile-First Animations */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-left-slow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes neon-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 15px #ffd700) drop-shadow(0 0 30px #ffd700);
+  }
+  50% {
+    filter: drop-shadow(0 0 25px #ffd700) drop-shadow(0 0 50px #ffd700) drop-shadow(0 0 60px #ff0000);
+  }
+}
+
+/* Mobile optimized animations */
+@media (max-width: 640px) {
+  @keyframes neon-pulse {
+    0%,
+    100% {
+      filter: drop-shadow(0 0 10px #ffd700) drop-shadow(0 0 20px #ffd700);
+    }
+    50% {
+      filter: drop-shadow(0 0 15px #ffd700) drop-shadow(0 0 30px #ffd700) drop-shadow(0 0 40px #ff0000);
+    }
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 25s linear infinite;
+}
+
+.animate-scroll-left-slow {
+  animation: scroll-left-slow 35s linear infinite;
+}
+
+/* Mobile: Faster animations for better UX */
+@media (max-width: 640px) {
+  .animate-scroll-left {
+    animation: scroll-left 20s linear infinite;
+  }
+
+  .animate-scroll-left-slow {
+    animation: scroll-left-slow 30s linear infinite;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out;
+}
+
+.animate-neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+/* Mobile-optimized scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+@media (min-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #fbbf24, #dc2626);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #f59e0b, #b91c1c);
+}
+
+/* Transform GPU acceleration */
+.transform-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Mobile-optimized glow effects */
+@keyframes glow-border {
+  0% {
+    box-shadow: 0 0 3px #ffd700;
+  }
+  50% {
+    box-shadow: 0 0 15px #ffd700, 0 0 20px #ff0000;
+  }
+  100% {
+    box-shadow: 0 0 3px #ffd700;
+  }
+}
+
+@media (min-width: 640px) {
+  @keyframes glow-border {
+    0% {
+      box-shadow: 0 0 5px #ffd700;
+    }
+    50% {
+      box-shadow: 0 0 20px #ffd700, 0 0 30px #ff0000;
+    }
+    100% {
+      box-shadow: 0 0 5px #ffd700;
+    }
+  }
+}
+
+.glow-border:hover {
+  animation: glow-border 2s ease-in-out infinite;
+}
+
+/* Natural fade effect for barber images - Mobile optimized */
+.barber-natural-fade {
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 55%,
+    rgba(0, 0, 0, 0.8) 70%,
+    rgba(0, 0, 0, 0.4) 80%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 55%,
+    rgba(0, 0, 0, 0.8) 70%,
+    rgba(0, 0, 0, 0.4) 80%,
+    transparent 100%
+  );
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+}
+
+/* Enhanced fade on hover - More subtle on mobile */
+.group:hover .barber-natural-fade {
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 60%,
+    rgba(0, 0, 0, 0.9) 75%,
+    rgba(0, 0, 0, 0.5) 85%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 60%,
+    rgba(0, 0, 0, 0.9) 75%,
+    rgba(0, 0, 0, 0.5) 85%,
+    transparent 100%
+  );
+}
+
+/* Mobile touch improvements */
+@media (max-width: 640px) {
+  .cursor-pointer {
+    cursor: default;
+  }
+
+  /* Larger touch targets */
+  button,
+  .cursor-pointer {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-pulse,
+    .animate-spin,
+    .animate-bounce,
+    .animate-scroll-left,
+    .animate-scroll-left-slow,
+    .star {
+      animation: none;
+    }
+
+    .transition-all,
+    .transition-transform,
+    .transition-colors,
+    .transition-opacity {
+      transition: none;
+    }
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile viewport fix */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+.cursor-pointer:focus-visible {
+  outline: 2px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .text-gray-400 {
+    @apply text-gray-300;
+  }
+
+  .border-gray-700 {
+    @apply border-gray-600;
+  }
+}
