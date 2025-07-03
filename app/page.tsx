@@ -42,35 +42,43 @@ export default function BarberShop() {
   ]
 
   const services = [
-    {
-      id: 1,
-      name: "Corte Clásico",
-      description: "Corte tradicional con tijeras y navaja",
-      price: "$25",
-      duration: "45 min",
-    },
-    {
-      id: 2,
-      name: "Fade Premium",
-      description: "Degradado profesional con acabado perfecto",
-      price: "$35",
-      duration: "60 min",
-    },
-    {
-      id: 3,
-      name: "Barba Completa",
-      description: "Arreglo y diseño de barba con productos premium",
-      price: "$20",
-      duration: "30 min",
-    },
-    {
-      id: 4,
-      name: "Afeitado Tradicional",
-      description: "Afeitado clásico con navaja y toallas calientes",
-      price: "$30",
-      duration: "45 min",
-    },
-  ]
+  {
+    id: 1,
+    name: "Corte",
+    description: "Corte tradicional adaptado al estilo del cliente",
+    price: "$340",
+  },
+  {
+    id: 2,
+    name: "Barba",
+    description: "Arreglo y diseño de barba con productos premium",
+    price: "$280",
+    duration: "60 min",
+  },
+  {
+    id: 3,
+    name: "Cejas",
+    description: "Perfilado de cejas con técnica precisa y limpieza facial leve",
+    price: "$120",
+  }, {
+    id: 4,
+    name: "Promo VIP, Corte, barba y cejas",
+    description: "Pack completo: corte, diseño de barba y perfilado de cejas",
+    price: "$420",
+  },
+   {
+    id: 5,
+    name: "Mechas",
+    description: "Aplicación de mechas para dar luz y estilo al cabello",
+    price: "(Desde) $1600",
+  },{
+    id: 6,
+    name: "Platinado global",
+    description: "Decoloración completa un platinado uniforme",
+    price: "(Desde) $1900",
+  },
+];
+
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
@@ -190,7 +198,7 @@ export default function BarberShop() {
         <section id="barbers" className="py-16 md:py-20 px-4 bg-gray-900/20">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">Elige tu Barbero</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">Nuestro equipo</h2>
               <div className="w-16 h-0.5 bg-red-600 mx-auto mb-4"></div>
               <p className="text-gray-400 text-lg">Selecciona al maestro que transformará tu estilo</p>
             </div>

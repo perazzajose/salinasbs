@@ -10,7 +10,7 @@ export default function Navbar() {
   const navItems = [
     { name: "Inicio", href: "#home", icon: Scissors },
     { name: "Galería", href: "#gallery", icon: ImageIcon },
-    { name: "Barberos", href: "#barbers", icon: Users },
+    { name: "Equipo", href: "#barbers", icon: Users },
     { name: "Servicios", href: "#services", icon: Star },
     { name: "Contacto", href: "#contact", icon: Phone },
   ]
@@ -33,10 +33,7 @@ export default function Navbar() {
               <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-200">
                 <Scissors className="w-5 h-5 text-white" />
               </div>
-              <div className="hidden sm:block">
-                <h1 className="text-lg font-bold text-white tracking-wide">Salinas Barbershop</h1>
-                <p className="text-xs text-red-400 tracking-widest">MODERNO</p>
-              </div>
+              
             </div>
           </button>
 
