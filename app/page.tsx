@@ -316,9 +316,9 @@ export default function BarberShop() {
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-white">Ubicación</h3>
                 <p className="text-gray-400">
-                  Av. Principal 123
+                  Av. Julieta M.4 S.8 Frente al Arco 
                   <br />
-                  Centro, Ciudad
+                  Salinas, Canelones
                 </p>
               </div>
 
@@ -327,7 +327,7 @@ export default function BarberShop() {
                   <Phone className="h-8 w-8 text-red-600" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-white">Teléfono</h3>
-                <p className="text-gray-400">+1 (555) 123-4567</p>
+                <p className="text-gray-400">094 944 107</p>
               </div>
 
               <div className="text-center">
@@ -336,9 +336,9 @@ export default function BarberShop() {
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-white">Horarios</h3>
                 <p className="text-gray-400">
-                  Lun - Sáb: 9AM - 8PM
+                  Lun, Mar, Jueves y Viernes: 10:00 - 20:00
                   <br />
-                  Dom: 10AM - 6PM
+                  Mie, Sab: 10:00 - 18:00
                 </p>
               </div>
             </div>
@@ -354,7 +354,7 @@ export default function BarberShop() {
               <div className="w-12 h-px bg-gray-600"></div>
             </div>
             <p className="text-gray-400 text-sm">© 2024 Salinas Barbershop. Todos los derechos reservados.</p>
-            <p className="text-red-600/60 text-xs mt-2">Barbería Moderna • Estilo Contemporáneo</p>
+            <p className="text-red-600/60 text-xs mt-2">Barbería Moderna </p>
           </div>
         </footer>
       </div>
